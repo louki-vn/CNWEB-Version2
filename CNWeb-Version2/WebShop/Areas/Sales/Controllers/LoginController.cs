@@ -11,7 +11,7 @@ namespace WebShop.Areas.Sales.Controllers
     {
         Shop db = new Shop();
 
-        // GET: Login
+        // GET: Loginnn
         [HttpGet]
         public ActionResult Login()
         {
