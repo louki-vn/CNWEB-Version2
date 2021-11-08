@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebShop.Models.ItemInCart>
+@model IEnumerable<WebShop.Models.ItemInCart>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Sales/Views/Shared/_Layout.cshtml";
@@ -426,7 +426,6 @@ document.querySelector('#Pay').onclick = function () {
                //Sử dụng Ajax truyền dữ liệu
                const usename = $('.usename').val();
                const numberphone = $('.numberphone').val();
-               const address = $('.address').val();
 
                var form = new FormData();
                form.append("usename", usename);
@@ -486,10 +485,10 @@ document.querySelector('#Pay').onclick = function () {
     }
 
 </script>
-                    }
-                    else
-                    {
-                        <h1>Bạn chưa đăng nhập, không thể xem thông tin giỏ hàng</h1>
-                        <a href="~/Sales/Login/Login">Đăng nhập ngay</a>
-                    }
+     }
+     else
+     {
+          <h1>Bạn chưa đăng nhập, không thể xem thông tin giỏ hàng</h1>
+          <a href="~/Sales/Login/Login">Đăng nhập ngay</a>
+     }
 }

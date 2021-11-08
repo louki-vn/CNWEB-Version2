@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<WebShop.Models.PRODUCT_Plus>
+    @using WebShop.Models;
 @{
     ViewBag.Title = "Product_Detail";
     Layout = "~/Areas/Sales/Views/Shared/_Layout.cshtml";
@@ -191,10 +192,26 @@
                                         <div class="spr-container">
                                             <div class="spr-header clearfix">
                                                 <div class="spr-summary">
-                                                    <span class="product-review"><a class="reviewLink"><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i> </a><span class="spr-summary-actions-togglereviews">Based on 6 reviews456</span></span>
-                                                    <span class="spr-summary-actions">
-                                                        <a href="#" class="spr-summary-actions-newreview btn">Viết nhận xét</a>
-                                                    </span>
+                                                    <span class="product-review"><a class="reviewLink"><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i> </a><span class="spr-summary-actions-togglereviews">Dựa trên @primary_product.sold đánh giá</span></span>
+                                                    @{
+                                                        if (ViewBag.review_qty > 0)
+                                                        {
+                                                            foreach (var r in (List<REVIEW>)ViewBag.review)
+                                                            {
+                                                                string a = r.date_post;
+                                                                <hr />
+                                                                <p class="spr-summary-actions">
+                                                                <p class="spr-summary-actions font-weight-bold"> @r.username </p>
+                                                                <p class="spr-summary-actions"> @r.review_text</p>
+                                                                <span class="spr-summary-actions font-italic"> @a </span>
+                                                                </p>
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            <p class="spr-summary-actions font-weight-bold"> Chưa có review nào về sản phẩm này!!  </p>
+                                                        }
+                                                    }
                                                 </div>
                                             </div>
                                             <div class="spr-content">
@@ -202,17 +219,6 @@
                                                     <form method="post" action="#" id="new-review-form" class="new-review-form">
                                                         <h3 class="spr-form-title">Viết review</h3>
                                                         <fieldset class="spr-form-review">
-                                                            <div class="spr-form-review-rating">
-                                                                <label class="spr-form-label">Đánh giá</label>
-                                                                <div class="spr-form-input spr-starrating">
-                                                                    <div class="product-review"><a class="reviewLink" href="#"><i class="fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i></a></div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="spr-form-review-title">
-                                                                <label class="spr-form-label" for="review_title_10508262282">Tiêu đề</label>
-                                                                <input class="spr-form-input spr-form-input-text " id="review_title_10508262282" type="text" name="review[title]" value="" placeholder="Viết tiêu đề">
-                                                            </div>
 
                                                             <div class="spr-form-review-body">
                                                                 <label class="spr-form-label" for="review_body_10508262282">Nội dung Review <span class="spr-form-review-body-charactersremaining">(1500)</span></label>
@@ -221,9 +227,14 @@
                                                                 </div>
                                                             </div>
                                                         </fieldset>
-                                                        <fieldset class="spr-form-actions">
-                                                            <input type="submit" class="spr-button spr-button-primary button button-primary btn btn-primary" value="Đăng tải nhận xét">
-                                                        </fieldset>
+                                                        @{
+                                                            string str = primary_product.product_id + "," + ViewBag.user_logined;
+                                                            <fieldset class="spr-form-actions">
+                                                                @*Bat su kien click in JS*@
+                                                                <input id="review_button" name="@str" type="button" class="spr-button spr-button-primary button button-primary btn btn-primary" value="Đăng tải nhận xét">
+                                                            </fieldset>
+                                                        }
+
                                                     </form>
                                                 </div>
                                             </div>
