@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebShop.Models.ItemInCart>
+@model IEnumerable<WebShop.Models.ItemInCart>
 @{
      ViewBag.Title = "Index";
      Layout = "~/Areas/Sales/Views/Shared/_Layout.cshtml";
@@ -151,17 +151,22 @@
                                                                       <label>Người nhận</label>
                                                                       <input type="text" class="usename">
                                                                       @*<select id="address_country" name="address[country]" data-default="United States">
-                                                                                <option value="HaNoi" data-provinces="[]">Hà Nội</option>
-                                                                                <option value="---" data-provinces="[]">---</option>
-                                                                                <option value="HoChiMinh" data-provinces="[]">Hồ Chí Minh</option>
-                                                                                <option value="HaTinh" data-provinces="[]">Hà Tĩnh</option>
-                                                                                <option value="TuyenQuang" data-provinces="[]">Tuyên Quang</option>
-                                                                           </select>*@
+                    <option value="HaNoi" data-provinces="[]">Hà Nội</option>
+                    <option value="---" data-provinces="[]">---</option>
+                    <option value="HoChiMinh" data-provinces="[]">Hồ Chí Minh</option>
+                    <option value="HaTinh" data-provinces="[]">Hà Tĩnh</option>
+                    <option value="TuyenQuang" data-provinces="[]">Tuyên Quang</option>
+               </select>*@
                                                                  </div>
                                                                  <div class="form-group">
                                                                       @*<label for="address_zip">Địa chỉ cụ thể (Số nhà, đường,..)</label>*@
                                                                       <label>Số điện thoại</label>
                                                                       <input type="number" class="numberphone">
+                                                                 </div>
+                                                                 <div class="form-group">
+                                                                      @*<label for="address_zip">Địa chỉ cụ thể (Số nhà, đường,..)</label>*@
+                                                                      <label>Địa chỉ nhận hàng</label>
+                                                                      <input type="text" class="address">
                                                                  </div>
                                                             </form>
                                                        </div>
@@ -421,10 +426,12 @@ document.querySelector('#Pay').onclick = function () {
                //Sử dụng Ajax truyền dữ liệu
                const usename = $('.usename').val();
                const numberphone = $('.numberphone').val();
-
+               const address = $('.address').val();
+               
                var form = new FormData();
                form.append("usename", usename);
                form.append("numberphone", numberphone);
+               form.append("address", address);
                form.append("amount", amount);
                var xhr = new XMLHttpRequest();
                xhr.open("POST", '@Request.Url.Scheme://@Request.Url.Host:@Request.Url.Port/Sales/ProductSales/SaveInfomationUser', true);
