@@ -176,8 +176,9 @@ namespace WebShop.Areas.Sales.Controllers
             JsonResult Js = new JsonResult();
             string usename = data["usename"];
             string numberphone = data["numberphone"];
+            string address = data["address"];
             string amount = data["amount"];
-            if (usename == "" || numberphone == "")
+            if (usename == "" || numberphone == "" || address == "")
             {
                 Js.Data = new
                 {
@@ -192,6 +193,7 @@ namespace WebShop.Areas.Sales.Controllers
                 info.member_id = int.Parse(member_id);
                 info.member_phone_number = numberphone;
                 info.status = 0;
+                info.delivery = address;
                 info.payment = true;
                 info.amount = Int32.Parse(amount);
                 db.TRANSACTIONs.Add(info);

@@ -396,6 +396,9 @@
     <Content Include="Asset\assets\images\credit-card.png" />
     <Content Include="Asset\assets\images\default-skin.png" />
     <Content Include="Asset\assets\images\dollar.png" />
+    <Content Include="Asset\assets\images\giay1.jpg" />
+    <Content Include="Asset\assets\images\giay2.jpg" />
+    <Content Include="Asset\assets\images\giay3.jpg" />
     <Content Include="Asset\assets\images\grid.jpg" />
     <Content Include="Asset\assets\images\jewellery-products\jewellery-products1-1.jpg" />
     <Content Include="Asset\assets\images\jewellery-products\jewellery-products1.jpg" />
@@ -432,6 +435,9 @@
     <Content Include="Asset\assets\images\swatches\color-img4.jpg" />
     <Content Include="Asset\assets\images\truck-mini.png" />
     <Content Include="Asset\assets\images\truck.png" />
+    <Content Include="Asset\assets\images\tui2.jpg" />
+    <Content Include="Asset\assets\images\tui3.jpg" />
+    <Content Include="Asset\assets\images\tuidior1.jpg" />
     <Content Include="Asset\assets\images\worldwide.png" />
     <Content Include="Asset\assets\js\bootstrap.min.js" />
     <Content Include="Asset\assets\js\jquery-3.5.1.min.js" />
