@@ -141,9 +141,9 @@
                                 {
                                     <tr class="spacer"></tr>
                                     <tr class="tr-shadow">
-                                        <td>
-                                            <div class="image">
-                                                <img src="@item.image_link" class="primary blur-up lazyload" />                                               
+                                        <td class="col-2">
+                                            <div class="product-image">
+                                                <img class="primary blur-up lazyload" data-src="@item.image_link.ToString().Trim()" src="@item.image_link.ToString().Trim()" alt="image" title="product"/>                                      
                                             </div>
                                         </td>
                                         <td id="id @item.product_id">@item.product_id</td>

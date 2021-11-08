@@ -450,6 +450,7 @@
     <Content Include="Asset\assets\js\vendor\photoswipe.min.js" />
     <Content Include="Asset\assets\js\vendor\wow.min.js" />
     <Content Include="Asset\Images\a843c75d34054bc976c1d318c219ebc2.jpg" />
+    <Content Include="Asset\Images\logo-1.jpg" />
     <Content Include="Asset\Images\RWG2eG.jpg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
